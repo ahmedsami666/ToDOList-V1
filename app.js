@@ -15,7 +15,6 @@ app.get("/", function(req, res){
     var day = date.getDate()
     // or another function from module 
     // var day = date.getDay()
-    console.log(day)
     res.render("list", {
         ListTitle: day, newListItem: items
     })
@@ -23,8 +22,6 @@ app.get("/", function(req, res){
 
 app.post("/", function(req, res){
     item = req.body.newItem;
-    console.log(item)
-    console.log(req.body)
     if (req.body.list === "work"){
         workitems.push(item)
         res.redirect("/work")
